@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns="http://www.w3schools.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx="http://www.tibco.com/schemas/employee.xsd">
+    <xsd:import namespace="http://www.tibco.com/schemas/employee.xsd" schemaLocation="/Resources/Schemas/Employee.xsd"/>
+    <pd:name>Services/Commands/POST_NewUser.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType>
+        <xsd:element name="NewEmployee">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="postData" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:startType>
+    <pd:startX>150</pd:startX>
+    <pd:startY>63</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>799</pd:endX>
+    <pd:endY>63</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1458680153483</pd:targetNamespace>
+    <pd:activity name="Parse XML">
+        <pd:type>com.tibco.plugin.xml.XMLParseActivity</pd:type>
+        <pd:resourceType>ae.activities.XMLParseActivity</pd:resourceType>
+        <pd:x>344</pd:x>
+        <pd:y>65</pd:y>
+        <config>
+            <inputStyle>text</inputStyle>
+            <xsdVersion>default</xsdVersion>
+            <validateOutput>true</validateOutput>
+            <term ref="pfx:employee"/>
+        </config>
+        <pd:inputBindings>
+            <xmlString>
+                <xsl:value-of select="$Start/NewEmployee/postData"/>
+            </xmlString>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="JDBC Update">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>552</pd:x>
+        <pd:y>64</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Resources/Connections/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>INSERT INTO %%Resources/JDBCConncection/Schema%%.EMPLOYEES (EMP_ID, FIRST_NAME, LAST_NAME, E_MAIL, PHONE_NUMBER, POSITION, USERNAME, PASSWORD)
+	VALUES( %%Resources/JDBCConncection/Schema%%.EMPLOYEES_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>FIRST_NAME</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>LAST_NAME</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>E_MAIL</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>PHONE_NUMBER</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>POSITION</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>USERNAME</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>PASSWORD</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <FIRST_NAME>
+                    <xsl:value-of select="$Parse-XML/pfx:employee/pfx:firstname"/>
+                </FIRST_NAME>
+                <LAST_NAME>
+                    <xsl:value-of select="$Parse-XML/pfx:employee/pfx:lastname"/>
+                </LAST_NAME>
+                <E_MAIL>
+                    <xsl:value-of select="$Parse-XML/pfx:employee/pfx:email"/>
+                </E_MAIL>
+                <PHONE_NUMBER>
+                    <xsl:value-of select="$Parse-XML/pfx:employee/pfx:phonenumber"/>
+                </PHONE_NUMBER>
+                <POSITION>
+                    <xsl:value-of select="$Parse-XML/pfx:employee/pfx:position"/>
+                </POSITION>
+                <USERNAME>
+                    <xsl:value-of select="$Parse-XML/pfx:employee/pfx:username"/>
+                </USERNAME>
+                <PASSWORD>
+                    <xsl:value-of select="$Parse-XML/pfx:employee/pfx:password"/>
+                </PASSWORD>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Parse XML</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Parse XML</pd:from>
+        <pd:to>JDBC Update</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>JDBC Update</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
