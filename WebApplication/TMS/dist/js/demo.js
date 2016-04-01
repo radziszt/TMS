@@ -7,7 +7,6 @@
 (function ($, AdminLTE) {
 
   "use strict";
-
   /**
    * List of all the available skins
    *

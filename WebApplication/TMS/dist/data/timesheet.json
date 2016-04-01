@@ -1,0 +1,27 @@
+{
+  "timesheet": {
+    "labels": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "datasets": [
+      {
+        "label": "{PROJECT_NAME}",
+        "fillColor": "rgba(210, 214, 222, 1)",
+        "strokeColor": "rgba(210, 214, 222, 1)",
+        "pointColor": "rgba(210, 214, 222, 1)",
+        "pointStrokeColor": "#c1c7d1",
+        "pointHighlightFill": "#fff",
+        "pointHighlightStroke": "rgba(220,220,220,1)",
+        "data": [5, 3, 8, 3, 3, 0, 0]
+      },
+      {
+        "label": "{PROJECT_NAME}",
+        "fillColor": "rgba(60,141,188,0.9)",
+        "strokeColor": "rgba(60,141,188,0.8)",
+        "pointColor": "#3b8bba",
+        "pointStrokeColor": "rgba(60,141,188,1)",
+        "pointHighlightFill": "#fff",
+        "pointHighlightStroke": "rgba(60,141,188,1)",
+        "data": [3, 5, 2, 5, 5, 6, 0]
+      }
+    ]
+  }
+}

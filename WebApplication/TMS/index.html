@@ -479,6 +479,22 @@
                             </div><!-- /.table-responsive -->
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
+
+                    <div class="box box-success">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Last Week Timesheet</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="chart">
+                                <canvas id="barChart" style="height:230px"></canvas>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+
+
                     <!-- MAP & BOX PANE -->
                     <div class="box box-success">
                         <div class="box-header with-border">
@@ -1254,6 +1270,7 @@
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/Chart.min.js"></script>
+<script src="plugins/chartjs/Chart.StackedBar.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
