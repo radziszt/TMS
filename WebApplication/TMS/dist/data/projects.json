@@ -1,0 +1,18 @@
+[
+  {
+    "projectId": "FCCWAE",
+    "projectName": "FCC WEB-APP Enchantments",
+    "projectPhase": "Architecture Planning",
+    "projectManager": "Tomasz Radziszewski",
+    "projectManagerId": "105",
+    "estimatedGoLive": "May 2016"
+  },
+   {
+    "projectId": "NSWB",
+    "projectName": "National Security Web Page",
+    "projectPhase": "Support",
+    "projectManager": "Aleksandra Gacparska",
+    "projectManagerId": "106",
+    "estimatedGoLive": "Live"
+  }
+]

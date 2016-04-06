@@ -1,0 +1,235 @@
+<header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account Begin -->
+                <li class="dropdown user user-menu">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="./dist/img/user1.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{USER_NAME}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-yellow-active">
+                            <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+                            <p>
+                                {USER_NAME}
+                                <small>{POSITION}</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer bg-yellow">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- User Account End -->
+            </ul>
+        </div>
+
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{USER_NAME}</p>
+                <a>{SOME_ADDITIONAL_INFO}</a>
+            </div>
+        </div>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#/">
+                    <i class="fa fa-institution"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/profile.html">
+                    <i class="fa fa-chevron-right"></i> <span>Profile</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#/mytasks">
+                    <i class="fa fa-check-square"></i>
+                    <span>My Tasks</span>
+                    <span class="label label-primary pull-right bg-green">3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/projects">
+                    <i class="fa fa-rocket"></i> <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/calendar.html">
+                    <i class="fa fa-calendar"></i> <span>Calendar</span>
+                    <small class="label pull-right bg-red">1</small>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<div class="content-wrapper">
+    <!-- Projects List Title Begin -->
+    <section class="content-header">
+        <h1>My Tasks</h1>
+    </section>
+    <!-- Projects List Title End -->
+    <section class="content">
+        <div class="row">
+            <!-- Projects List Begin -->
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header">
+                        <h3 class="box-title">Ongoing Taks</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="ongoingTaskList" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Task ID</th>
+                                <th>Task Name</th>
+                                <th>Project Name</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Progress</th>
+                                <th>Priority</th>
+                                <th>Deadline</th>
+                                <th>Reported By</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="task in mtc.taskList | myNotCompleted:'Tomasz Radziszewski'">
+                                <td><a href="#/tasks/{{task.taskId}}">{{task.taskId}}</a></td>
+                                <td>{{task.taskName}}</td>
+                                <td><a href="#/projects/{{task.projectId}}">{{task.projectName}}</a></td>
+                                <td>
+                                    <i ng-class="['fa', {
+                                                    'fa-bug'            : task.type === 'Bug',
+                                                    'fa-code'           : task.type === 'Development',
+                                                    'fa-paint-brush'    : task.type === 'Graphics',
+                                                    'fa-file-text-o'    : task.type === 'Documentation',
+                                                    'fa-cubes'          : task.type === 'Architecture',}]"></i>
+                                    {{task.type}}
+                                </td>
+                                <td>
+                                    <span ng-class="['label', {
+                       'label-info'    : task.taskStatus === 'In Progress',
+                       'label-danger'  : task.taskStatus === 'Urgent',
+                       'label-warning' : task.taskStatus === 'New',
+                       'label-success' : task.taskStatus === 'Completed' || task.taskStatus === 'Fixed'}]">{{task.taskStatus}}</span>
+                                </td>
+                                <td>
+                                    <div class="progress progress active" style="margin-bottom: 5px">
+                                        <div ng-class="['progress-bar', {
+                       'progress-bar-success'  : task.taskProgress > 80,
+                       'progress-bar-info'     : task.taskProgress > 50 && task.taskProgress <= 80,
+                       'progress-bar-warning'  : task.taskProgress > 20 && task.taskProgress <= 50,
+                       'progress-bar-danger'   : task.taskProgress <= 20}, 'progress-bar-striped']"
+                                             role="progressbar" aria-valuenow="{{task.taskProgress}}"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100" style="width: {{task.taskProgress}}%">
+                                            {{task.taskProgress}}% Completed
+                                        </div>
+                                </td>
+                                <td><span ng-class="['label', {
+                       'label-info'    : task.priority === 'Normal',
+                       'label-danger'  : task.priority === 'Blocker',
+                       'label-warning' : task.priority === 'High',
+                       'label-default' : task.priority === 'Low'}]">{{task.priority}}</span></td>
+                                <td>{{task.taskDeadline}}</td>
+                                <td><a href="#/users/{{task.taskReporterId}}">{{task.taskReporter}}</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="box box-success collapsed-box">
+                    <div class="box-header ">
+                        <h3 class="box-title">Past Tasks</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="pastTaskList" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Task ID</th>
+                                <th>Task Name</th>
+                                <th>Project Name</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Deadline</th>
+                                <th>Reported By</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="task in mtc.taskList | myCompleted:'Tomasz Radziszewski'">
+                                <td><a href="#/tasks/{{task.taskId}}">{{task.taskId}}</a></td>
+                                <td>{{task.taskName}}</td>
+                                <td><a href="#/projects/{{task.projectId}}">{{task.projectName}}</a></td>
+                                <td>
+                                    <i ng-class="['fa', {
+                                                    'fa-bug'            : task.type === 'Bug',
+                                                    'fa-code'           : task.type === 'Development',
+                                                    'fa-paint-brush'    : task.type === 'Graphics',
+                                                    'fa-file-text-o'    : task.type === 'Documentation',
+                                                    'fa-cubes'          : task.type === 'Architecture',}]"></i>
+                                    {{task.type}}
+                                </td>
+                                <td>
+                                    <span ng-class="['label', {
+                       'label-info'    : task.taskStatus === 'In Progress',
+                       'label-danger'  : task.taskStatus === 'Urgent',
+                       'label-warning' : task.taskStatus === 'New',
+                       'label-success' : task.taskStatus === 'Completed' || task.taskStatus === 'Fixed'}]">{{task.taskStatus}}</span>
+                                </td>
+                                <td>{{task.taskDeadline}}</td>
+                                <td><a href="#/users/{{task.taskReporterId}}">{{task.taskReporter}}</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects List End -->
+        </div>
+    </section>
+
+
+</div>
+
+<footer class="main-footer">
+
+</footer>
+

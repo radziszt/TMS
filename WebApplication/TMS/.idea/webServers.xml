@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d6a06111-23b5-48be-8201-49d245109858" name="TMS" url="http://localhost:7070/TMS/">
+        <fileTransfer mountedRoot="C:\Program Files\Apache Software Foundation\Tomcat 9.0_TMS-tomcat9\webapps\TMS" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

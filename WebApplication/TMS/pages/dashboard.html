@@ -1,0 +1,454 @@
+<div class="wrapper">
+
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>A</b>LT</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Admin</b>LTE</span>
+        </a>
+        <!-- Top Navigation Bar Begin -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- User Account Begin -->
+                    <li class="dropdown user user-menu">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="./dist/img/user1.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs">{USER_NAME}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header bg-yellow-active">
+                                <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+                                <p>
+                                    {USER_NAME}
+                                    <small>{POSITION}</small>
+                                </p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer bg-yellow">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- User Account End -->
+                </ul>
+            </div>
+
+        </nav>
+        <!-- Top Navigation Bar End -->
+
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>{USER_NAME}</p>
+                    <a>{SOME_ADDITIONAL_INFO}</a>
+                </div>
+            </div>
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="#/">
+                        <i class="fa fa-institution"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/profile.html">
+                        <i class="fa fa-chevron-right"></i> <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/mytasks">
+                        <i class="fa fa-check-square"></i>
+                        <span>My Tasks</span>
+                        <span class="label label-primary pull-right bg-green">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/projects">
+                        <i class="fa fa-rocket"></i> <span>Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/calendar.html">
+                        <i class="fa fa-calendar"></i> <span>Calendar</span>
+                        <small class="label pull-right bg-red">1</small>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <div class="content-wrapper">
+        <!--Dashboard Title Begin-->
+        <section class="content-header">
+            <h1>
+                Dashboard
+            </h1>
+        </section><!--Dashboard Title End-->
+
+        <!-- Main content -->
+        <section class="content">
+            <!--Info Boxes Begin-->
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-aqua"><i class="fa fa-sun-o"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Non-working Days Left</span>
+                            <span class="info-box-number">24</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-red"><i class="fa fa-check-square-o"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Completed Tasks</span>
+                            <span class="info-box-number">41,410</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix visible-sm-block"></div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-lime"><i class="fa fa-birthday-cake"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Birthday</span>
+                            <a href="#" class="info-box-number text-black">Tomasz Radziszewski</a>
+                            <a href="#" class="info-box-number text-black">Aleksandra Gacparska</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Partners</span>
+                            <span class="info-box-number">7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Info Boxes End-->
+
+            <!-- Main row -->
+            <div class="row">
+                <!--Left Column Begin-->
+                <div class="col-md-8">
+                    <!--Recent Tasks Begin-->
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Recent Tasks</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                    <tr>
+                                        <th>Task ID</th>
+                                        <th>Name</th>
+                                        <th>Project</th>
+                                        <th>Status</th>
+                                        <th>Deadline</th>
+                                        <th>Assign To</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="task in dc.mytasks">
+                                        <td><a href="#">{{task.taskId}}</a></td>
+                                        <td>{TASK_NAME}</td>
+                                        <td>{PROJECT_NAME}</td>
+                                        <td><span ng-class="dc.setLabel(task.taskStatus)">{{task.taskStatus}}</span></td>
+                                        <td>{END_DATE}</td>
+                                        <td>
+                                            <a class="btn btn-block btn-social bg-green btn-xs">
+                                                <i class="fa fa-check"></i> Assign to me
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div><!-- /.table-responsive -->
+                        </div>
+                    </div>
+                    <!--Recent Tasks End-->
+
+                    <!--Timesheet Begin-->
+                    <div class="box box-purple">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Last Week Timesheet</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="chart">
+                                <canvas id="barChart" style="height:230px"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="box-footer clearfix">
+                            <a class="btn btn-sm bg-purple btn-flat pull-right">Submit New Timesheet</a>
+                            <a class="btn btn-sm btn-default btn-flat pull-right">View Timesheets</a>
+                        </div>
+                    </div>
+                    <!--Timesheet End-->
+
+
+                    <div class="row">
+                        <!--Group Chat Begin-->
+                        <div class="col-md-6">
+                            <div class="box box-warning direct-chat direct-chat-warning">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Group Chat</h3>
+                                    <div class="box-tools pull-right">
+                                        <span data-toggle="tooltip" title="3 New Messages"
+                                              class="badge bg-gray">3</span>
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i
+                                                class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <!-- Conversations are loaded here -->
+                                    <div class="direct-chat-messages">
+                                        <!-- Message. Default to the left -->
+                                        <div class="direct-chat-msg">
+                                            <div class="direct-chat-info clearfix">
+                                                <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                                                <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+                                            </div>
+                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg"
+                                                 alt="message user image">
+                                            <div class="direct-chat-text">
+                                                Is this template really for free? That's unbelievable!
+                                            </div>
+                                        </div>
+
+                                        <!-- Message to the right -->
+                                        <div class="direct-chat-msg right">
+                                            <div class="direct-chat-info clearfix">
+                                                <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                                                <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+                                            </div>
+                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg"
+                                                 alt="message user image">
+                                            <div class="direct-chat-text">
+                                                You better believe it!
+                                            </div>
+                                        </div>
+
+                                        <!-- Message. Default to the left -->
+                                        <div class="direct-chat-msg">
+                                            <div class="direct-chat-info clearfix">
+                                                <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                                                <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
+                                            </div><!-- /.direct-chat-info -->
+                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg"
+                                                 alt="message user image">
+                                            <div class="direct-chat-text">
+                                                Working with AdminLTE on a great new app! Wanna join?
+                                            </div>
+                                        </div>
+
+                                        <!-- Message to the right -->
+                                        <div class="direct-chat-msg right">
+                                            <div class="direct-chat-info clearfix">
+                                                <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                                                <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
+                                            </div>
+                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg"
+                                                 alt="message user image">
+                                            <div class="direct-chat-text">
+                                                I would love to.
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="box-footer">
+                                    <form action="#" method="post">
+                                        <div class="input-group">
+                                            <input type="text" name="message" placeholder="Type Message ..."
+                                                   class="form-control">
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-warning btn-flat">Send</button>
+                          </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Group Chat End-->
+
+                        <!-- New Coworkers Begin -->
+                        <div class="col-md-6">
+                            <div class="box box-danger">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">New Coworkers</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i
+                                                class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body no-padding">
+                                    <ul class="users-list clearfix">
+                                        <li>
+                                            <img src="dist/img/user1-128x128.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">Alexander Pierce</a>
+                                            <span class="users-list-date">Today</span>
+                                        </li>
+                                        <li>
+                                            <img src="dist/img/user8-128x128.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">Norman</a>
+                                            <span class="users-list-date">Yesterday</span>
+                                        </li>
+                                        <li>
+                                            <img src="dist/img/user7-128x128.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">Jane</a>
+                                            <span class="users-list-date">12 Jan</span>
+                                        </li>
+                                        <li>
+                                            <img src="dist/img/user6-128x128.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">John</a>
+                                            <span class="users-list-date">12 Jan</span>
+                                        </li>
+                                        <li>
+                                            <img src="dist/img/user2-160x160.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">Alexander</a>
+                                            <span class="users-list-date">13 Jan</span>
+                                        </li>
+                                        <li>
+                                            <img src="dist/img/user5-128x128.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">Sarah</a>
+                                            <span class="users-list-date">14 Jan</span>
+                                        </li>
+                                        <li>
+                                            <img src="dist/img/user4-128x128.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">Nora</a>
+                                            <span class="users-list-date">15 Jan</span>
+                                        </li>
+                                        <li>
+                                            <img src="dist/img/user3-128x128.jpg" alt="User Image">
+                                            <a class="users-list-name" href="#">Nadia</a>
+                                            <span class="users-list-date">15 Jan</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="box-footer text-center">
+                                    <a href="javascript::" class="uppercase">View All Coworkers</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- New Coworkers End -->
+                    </div>
+                    <!--New Members End-->
+
+                    <!-- TABLE: LATEST ORDERS -->
+
+                </div>
+                <!--Left Column End-->
+
+                <!--Right Column Begin-->
+                <div class="col-md-4">
+                    <!--Project Tasks Progress Begin-->
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Project Tasks Progress</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="chart-responsive">
+                                        <canvas id="pieChart" height="140"></canvas>
+                                    </div>
+                                    <span class="info-box-text text-center">{PROJECT_NAME}</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="chart-responsive">
+                                        <canvas id="pieChart1" height="140"></canvas>
+                                    </div>
+                                    <span class="info-box-text text-center">{PROJECT_NAME}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="chart-legend clearfix">
+                                        <li><i class="fa fa-circle-o text-red"></i> Feedback</li>
+                                        <li><i class="fa fa-circle-o text-green"></i> Completed</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="chart-legend clearfix">
+                                        <li><i class="fa fa-circle-o text-yellow"></i> New</li>
+                                        <li><i class="fa fa-circle-o text-light-blue"></i> In Progress</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Project Tasks Progress End-->
+
+                    <!-- Daily Info Box Begin -->
+                    <div class="info-box bg-green">
+                        <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Today's Meetings</span>
+                            <span class="progress-description">{Meeting_1} {Time}</span>
+                            <span class="progress-description">{Meeting_2} {Time}</span>
+                            <span class="progress-description">{Meeting_3} {Time}</span>
+                        </div>
+                    </div>
+                    <div class="info-box bg-red">
+                        <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Errors Signed To You</span>
+                            <span class="info-box-number">5</span>
+                            <span class="progress-description text-info">
+                                <a href="#" class="text-white">{ERROR 1}</a>
+                                <span class="label label-default">NEW</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Daily Info Box End-->
+
+                </div><!-- /.col -->
+                <!--Right Column End-->
+            </div><!-- /.row -->
+        </section><!-- /.content -->
+    </div>
+
+    <footer class="main-footer">
+
+    </footer>
+
+</div><!-- ./wrapper -->

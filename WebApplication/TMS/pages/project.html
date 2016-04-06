@@ -1,0 +1,236 @@
+<header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account Begin -->
+                <li class="dropdown user user-menu">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="./dist/img/user1.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{USER_NAME}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-yellow-active">
+                            <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+                            <p>
+                                {USER_NAME}
+                                <small>{POSITION}</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer bg-yellow">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- User Account End -->
+            </ul>
+        </div>
+
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{USER_NAME}</p>
+                <a>{SOME_ADDITIONAL_INFO}</a>
+            </div>
+        </div>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#/">
+                    <i class="fa fa-institution"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/profile.html">
+                    <i class="fa fa-chevron-right"></i> <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/mytasks">
+                    <i class="fa fa-check-square"></i>
+                    <span>My Tasks</span>
+                    <span class="label label-primary pull-right bg-green">3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/projects">
+                    <i class="fa fa-rocket"></i> <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/calendar.html">
+                    <i class="fa fa-calendar"></i> <span>Calendar</span>
+                    <small class="label pull-right bg-red">1</small>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<div class="content-wrapper">
+    <!-- Projects List Title Begin -->
+    <section class="content-header">
+        <h1>{{pc.projectName}}</h1>
+        <small>Project {{pc.projectId}}</small>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-8" style="left: 35px">
+                <div class="box box-white">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Project Tasks</h3>
+                    </div>
+                    <div class="box-body">
+                        <table id="projectTaskList" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Task ID</th>
+                                <th>Task Name</th>
+                                <th>Status</th>
+                                <th>Priority</th>
+                                <th>Deadline</th>
+                                <th>Assigned To</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="task in pc.taskList | filter: { projectId: pc.projectId }">
+                                <td><a href="#/tasks/{{task.taskId}}">{{task.taskId}}</a></td>
+                                <td>{{task.taskName}}</td>
+                                <td>
+                                    <span ng-class="['label', {
+                       'label-info'    : task.taskStatus === 'In Progress',
+                       'label-danger'  : task.taskStatus === 'Urgent',
+                       'label-warning' : task.taskStatus === 'New',
+                       'label-success' : task.taskStatus === 'Completed' || task.taskStatus === 'Fixed'}]">{{task.taskStatus}}</span>
+                                </td>
+                                <td><span ng-class="['label', {
+                       'label-info'    : task.priority === 'Normal',
+                       'label-danger'  : task.priority === 'Blocker',
+                       'label-warning' : task.priority === 'High',
+                       'label-default' : task.priority === 'Low'}]">{{task.priority}}</span></td>
+                                <td>{{task.taskDeadline}}</td>
+                                <td><a href="#/users/{{task.taskAssigneeId}}">{{task.taskAssignee}}</a></td>
+                            </tr>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div>
+            </div><!-- /.col -->
+            <div class="col-md-4">
+                <!-- The time line -->
+                <ul class="timeline">
+                    <li>
+                        <i class="fa  fa-user bg-yellow"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-yellow">Project Manager</h3>
+                            <div class="timeline-body post">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="dist/img/user1-128x128.jpg"
+                                         alt="user image">
+                        <span class="username">
+                          <a href="#/user/{{pc.projectManager}}">{{pc.projectManagerName}}</a>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-suitcase bg-green"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-green">Project Phase</h3>
+                            <div class="timeline-body">
+                                <h3 class="no-margin">{{pc.projectPhase}}</h3>
+                                <div class="progress no-margin">
+                                    <div class="progress-bar progress-bar-green" role="progressbar"
+                                         aria-valuenow="{{pc.projectProgress}}"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: {{pc.projectProgress}}%">
+                                        <span class="sr-only">{{pc.projectProgress}}% Complete (success)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-footer">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-pencil bg-aqua"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-aqua">Project Basic Information</h3>
+                            <div class="timeline-body">
+                                {{pc.projectDescription}}
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-calendar-o bg-purple"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-purple">Dates</h3>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h4>Created</h4>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4 class="text-bold">{{pc.createDate}}</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h4>Updated</h4>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4 class="text-bold">{{pc.updateDate}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa  fa-code-fork bg-red"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-red text-bold">Repository</h3>
+                            <div class="timeline-body">
+                                <a class="lead">{{pc.vcsLink}}</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+
+
+</div>
+
+<footer class="main-footer">
+
+</footer>
+

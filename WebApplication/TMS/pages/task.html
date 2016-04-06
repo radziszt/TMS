@@ -1,0 +1,315 @@
+<header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account Begin -->
+                <li class="dropdown user user-menu">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="./dist/img/user1.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{USER_NAME}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-yellow-active">
+                            <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+                            <p>
+                                {USER_NAME}
+                                <small>{POSITION}</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer bg-yellow">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- User Account End -->
+            </ul>
+        </div>
+
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{USER_NAME}</p>
+                <a>{SOME_ADDITIONAL_INFO}</a>
+            </div>
+        </div>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#/">
+                    <i class="fa fa-institution"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/profile.html">
+                    <i class="fa fa-chevron-right"></i> <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/mytasks">
+                    <i class="fa fa-check-square"></i>
+                    <span>My Tasks</span>
+                    <span class="label label-primary pull-right bg-green">3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/projects">
+                    <i class="fa fa-rocket"></i> <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/calendar.html">
+                    <i class="fa fa-calendar"></i> <span>Calendar</span>
+                    <small class="label pull-right bg-red">1</small>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<div class="content-wrapper">
+    <!-- Projects List Title Begin -->
+    <section class="content-header">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><i class="fa fa-pencil-square-o"></i> Edit Task</button>
+            <button type="button" class="btn btn-default"><i class="fa fa-comment-o"></i> Add Comment</button>
+            <button type="button" class="btn btn-default">Close Task</button>
+        </div>
+        <div class="content-header">
+            <h1>{{tc.taskName}}</h1>
+            <small>Task {{tc.taskId}}</small>
+        </div>
+    </section>
+    <section class="content">
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-8" style="left: 35px">
+                <!-- The time line -->
+                <ul class="timeline">
+                    </li>
+                    <li>
+                        <i class="fa fa-star bg-blue"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-blue">Task Details</h3>
+                            <div class="timeline-body">
+                                <div class="box-body">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h4>Project Name</h4>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <h4 class="text-bold">{{tc.projectName}}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h4>Type</h4>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <h4 class="text-bold"><i ng-class="['fa', {
+                                                    'fa-bug'            : tc.type === 'Bug',
+                                                    'fa-code'           : tc.type === 'Development',
+                                                    'fa-paint-brush'    : tc.type === 'Graphics',
+                                                    'fa-file-text-o'    : tc.type === 'Documentation',
+                                                    'fa-cubes'          : tc.type === 'Architecture',}]"></i>
+                                                    {{tc.type}}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h4>Priority</h4>
+                                            </div>
+                                            <div class="col-sm-8" style="padding-top: 8px">
+                                                <span ng-class="['label', {
+                                                       'label-info'    : tc.priority === 'Normal',
+                                                       'label-denger'  : tc.priority === 'Blocker',
+                                                       'label-warning' : tc.priority === 'High',
+                                                       'label-default' : tc.priority === 'Low'}]">{{tc.priority}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h4>Status</h4>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <h4 class="text-bold">{{tc.status}}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="width: 90%; margin-left: 1px">
+                                            <div class="progress progress active" style="margin-bottom: 5px">
+                                                <div ng-class="['progress-bar', {
+                                'progress-bar-success' : tc.taskProgress > 80,
+                                'progress-bar-info' : tc.taskProgress > 50 && tc.taskProgress <= 80,
+                                'progress-bar-warning' : tc.taskProgress > 20 && tc.taskProgress <= 50,
+                                'progress-bar-danger' : tc.taskProgress <= 20}, 'progress-bar-striped']"
+                                                     role="progressbar" aria-valuenow="{{tc.taskProgress}}"
+                                                     aria-valuemin="0"
+                                                     aria-valuemax="100" style="width: {{tc.taskProgress}}%">
+                                                    {{tc.taskProgress}}% Completed
+                                                </div>
+                                            </div>
+                                            <div class="btn-group-sm pull-right">
+                                                <a class="btn btn-social-icon btn-default btn-flat"
+                                                   ng-click="tc.setTaskProgress(tc.decrease)"><i
+                                                        class="fa fa-minus"></i></a>
+                                                <a class="btn btn-social-icon btn-default btn-flat"
+                                                   ng-click="tc.setTaskProgress(tc.increase)"><i
+                                                        class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-pencil bg-aqua"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-aqua">Description</h3>
+                            <div class="timeline-body">
+                                {{tc.taskDescription}}
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-suitcase bg-green"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-green">Attachments</h3>
+                            <div class="timeline-body">
+
+                            </div>
+                            <div class="timeline-footer">
+                                <a class="btn btn-instagram btn-flat btn-xs">Browse</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-comment-o bg-orange"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-orange text-bold">Comments</h3>
+                            <div class="chat"
+                                 style="overflow: auto; width: auto; min-height: 100px; max-height: 300px;">
+                                <!-- chat item -->
+                                <div class="item" ng-repeat="comment in tc.taskComments | orderBy: '-date'">
+                                    <div>
+                                        <h5 class="text-bold text-light-blue box-body no-margin">
+                                            <a href="#/user/{{comment.userId}}">{{comment.userName}}</a></h5>
+                                        <h5 class="text-black pull-right text-gray"><i class="fa fa-clock-o"></i>
+                                            {{comment.date}}</h5>
+                                        <div class="box-body no-margin">
+                                            {{comment.comment}}
+                                        </div>
+                                        <div class="box-footer no-padding"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.chat -->
+                    </li>
+                </ul>
+            </div><!-- /.col -->
+            <div class="col-md-4" style="right: 25px">
+                <!-- The time line -->
+                <ul class="timeline">
+                    </li>
+                    <li>
+                        <i class="fa  fa-group bg-yellow"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-yellow">People</h3>
+                            <div class="timeline-body post">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="dist/img/user7-128x128.jpg"
+                                         alt="user image">
+                        <span class="username">
+                          <a href="#/users/{{tc.taskReporterId}}">{{tc.taskReporter}}</a>
+                        </span>
+                                    <span class="description">Reporter</span>
+                                </div>
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="dist/img/user4-128x128.jpg"
+                                         alt="user image">
+                        <span class="username">
+                          <a href="#/users/{{tc.taskAssigneeId}}">{{tc.taskAssignee}}</a>
+                        </span>
+                                    <span class="description">Assignee</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-calendar-o bg-purple"></i>
+                        <div class="timeline-item">
+                            <h3 class="timeline-header text-bold text-purple">Dates</h3>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h4>Created</h4>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4 class="text-bold">{{tc.createDate}}</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h4>Updated</h4>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4 class="text-bold">{{tc.updateDate}}</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h4>Deadline</h4>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4 class="text-bold text-red">{{tc.dueDate}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+
+
+</div>
+
+<footer class="main-footer">
+
+</footer>
+

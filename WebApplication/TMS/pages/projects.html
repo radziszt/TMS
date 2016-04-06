@@ -1,0 +1,143 @@
+<header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account Begin -->
+                <li class="dropdown user user-menu">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="./dist/img/user1.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{USER_NAME}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-yellow-active">
+                            <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+                            <p>
+                                {USER_NAME}
+                                <small>{POSITION}</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer bg-yellow">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- User Account End -->
+            </ul>
+        </div>
+
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{USER_NAME}</p>
+                <a>{SOME_ADDITIONAL_INFO}</a>
+            </div>
+        </div>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#/">
+                    <i class="fa fa-institution"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/profile.html">
+                    <i class="fa fa-chevron-right"></i> <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#/mytasks">
+                    <i class="fa fa-check-square"></i>
+                    <span>My Tasks</span>
+                    <span class="label label-primary pull-right bg-green">3</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#/projects">
+                    <i class="fa fa-rocket"></i> <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="pages/calendar.html">
+                    <i class="fa fa-calendar"></i> <span>Calendar</span>
+                    <small class="label pull-right bg-red">1</small>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<div class="content-wrapper">
+    <!-- Projects List Title Begin -->
+    <section class="content-header">
+        <h1>All Projects</h1>
+    </section>
+    <!-- Projects List Title End -->
+    <section class="content">
+        <div class="row">
+            <!-- Projects List Begin -->
+            <div class="col-md-12">
+                <div class="box box-warning">
+
+                    <div class="box-body">
+                        <table id="projectList" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Project ID</th>
+                                <th>Project Name</th>
+                                <th>Project Phase</th>
+                                <th>Project Manager</th>
+                                <th>Estimate Go-Live</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="project in pc.projectList">
+                                <td><a href="#/projects/{{project.projectId}}">{{project.projectId}}</a></td>
+                                <td>{{project.projectName}}</td>
+                                <td>{{project.projectPhase}}</td>
+                                <td><a href="#/user/{{project.taskManagerId}}">{{project.projectManager}}</a></td>
+                                <td ng-bind-html="pc.setGoLiveHtml(project.estimatedGoLive)"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects List End -->
+        </div>
+    </section>
+
+
+</div>
+
+<footer class="main-footer">
+
+</footer>
+

@@ -1,0 +1,37 @@
+{
+  "task": {
+    "taskId": "7001",
+    "taskName": "New Page Logo",
+    "projectId": "FCCWAE",
+    "projectName": "FCC WEB-APP Enchantments",
+    "taskAssignee": "Dagmara Magiczna",
+    "taskReporter": "FCC Polska",
+    "taskAssigneeId": "102",
+    "taskReporterId": "110",
+    "taskDescription": "HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.",
+    "taskComments":
+      [
+        {
+          "userId": "105",
+          "userName": "Tomasz Radziszewski",
+          "comment": "Additional graphic has been upload to project repository under /LogoGraphics ",
+          "date": "16/12/2015 15:24"
+        },
+        {
+          "userId": "102",
+          "userName": "Dagmara Magiczna",
+          "comment": "First version has been send to client",
+          "date": "17/12/2015 15:11"
+        }
+      ],
+    "filesUrl": "",
+    "fileList": "",
+    "priority": "Normal",
+    "createDate": "15/12/2015 14:17",
+    "updateDate": "17/12/2015 15:11",
+    "dueDate": "31/12/2015",
+    "taskProgress": 50,
+    "status": "In Progress",
+    "type": "Graphics"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "task": {
+    "taskId": "",
+    "taskName": "",
+    "projectId": "",
+    "projectName": "",
+    "taskMangaer": "",
+    "taskAssignee": "",
+    "taskDescription": "",
+    "filesUrl": "",
+    "fileList": "",
+    "priority": "",
+    "createDate": "",
+    "dueDate": "",
+    "taskProgress": "",
+    "status": "",
+    "type": ""
+  }
+}
