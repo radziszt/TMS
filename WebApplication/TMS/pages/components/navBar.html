@@ -1,0 +1,118 @@
+<header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+    <!-- Top Navigation Bar Begin -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav" style="vertical-align: middle">
+                <!-- User Account Begin -->
+                <li>
+                    <div class="margin">
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#newTaskModal">
+                            New Task
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="newTaskModal" tabindex="-1" role="dialog"
+                             aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                        <h4 class="modal-title">New Task</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="box box-white no-border">
+                                            <div class="form-group">
+                                                <label for="taskName" class="col-sm-3 control-label">Task
+                                                    Name</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="taskName"
+                                                           placeholder="General Description">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project" class="col-sm-3 control-label">Task
+                                                    Name</label>
+                                                <div class="col-sm-9">
+                                                    <select class="selectpicker form-control" data-size="5"
+                                                            title="Select Project" id="project">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project" class="col-sm-3 control-label">Task
+                                                    Name</label>
+                                                <div class="col-sm-9">
+                                                    <select class="selectpicker form-control" data-size="5"
+                                                            title="Select Project" id="project">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <li>
+                    <div class="input-group margin" style="width: 200px">
+                        <input type="text" class="form-control input-sm" placeholder="Search...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-sm btn-info btn-flat" type="button"><i class="fa fa-search"></i></button>
+                    </span>
+                    </div>
+                </li>
+                <li class="dropdown user user-menu">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="./dist/img/user1.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{USER_NAME}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-yellow-active">
+                            <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
+                            <p>
+                                {USER_NAME}
+                                <small>{POSITION}</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer bg-yellow">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- User Account End -->
+            </ul>
+        </div>
+
+    </nav>
+    <!-- Top Navigation Bar End -->
+
+</header>

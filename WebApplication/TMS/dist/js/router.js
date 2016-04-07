@@ -3,24 +3,20 @@
 
     ng.module('tms',
         [
-            'ngRoute',
+            'dashboard',
             'myTasks',
+            'task',
             'projects',
+            'project',
+            'mainComponents',
+
             'service',
             'commonFunctions',
-            'task',
-            'project',
             'customFilter'
         ])
         .config(
             function ($routeProvider) {
                 $routeProvider
-                    .when('/', {
-                        templateUrl: 'pages/dashboard.html',
-                        controller: 'DashboardController',
-                        controllerAs: 'dc',
-                        myCustomName: 'Dashboard'
-                    })
                     .otherwise({
                         redirectTo: '/'
                     });
