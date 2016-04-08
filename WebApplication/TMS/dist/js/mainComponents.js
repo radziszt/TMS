@@ -13,7 +13,27 @@
 
     function NavBarController(){
 
-        $('#newTaskModal').appendTo("body");
+        setTimeout(function(){
+            $('#newTaskModal').appendTo("body");
+            $('.select2').select2({
+                templateResult: formatState,
+                templateSelection: formatState
+            });
+
+            function formatState (data) {
+                if (!data.id) {
+                    return data.text;
+                }
+                console.log(data);
+                var $state = $(
+                    '\<span class="label label-success"\>' + data.element.value.toLowerCase() + '\</span\>'
+                );
+                return $state;
+            }
+
+        }, 0);
+
+
     }
 
 })(window.angular);

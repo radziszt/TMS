@@ -1,0 +1,9 @@
+.dropdown-menu {
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-before: 0px;
+    padding: 0 !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
