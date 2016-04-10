@@ -8,7 +8,22 @@
         .filter('myNotCompleted', myNotCompleted)
         .filter('myCompleted', myCompleted)
         .filter('newOrUrgent', newOrUrgent)
-        .filter('myActiveBug', myActiveBug);
+        .filter('myActiveBug', myActiveBug)
+        .filter('completedTasks', completedTasks);
+
+    function completedTasks() {
+        return function (items, userId) {
+            var filtered = [];
+            ng.forEach(items, function (item) {
+                if (item.taskStatus === 'Completed' ||
+                    item.taskStatus === 'Fixed' ||
+                    item.taskStatus === 'Closed') {
+                    filtered.push(item);
+                }
+            });
+            return filtered;
+        }
+    }
 
     function myActiveBug() {
         return function (items, userId) {
@@ -17,10 +32,10 @@
                 if ((item.taskStatus !== 'Completed' &&
                     item.taskStatus !== 'Fixed' &&
                     item.taskStatus !== 'Closed') &&
-                    item.taskAssignee === userId &&
+                    item.taskAssigneeId === userId &&
                     item.type === 'Bug') {
                     filtered.push(item);
-                    console.log('OMG', filtered);
+
                 }
             });
             return filtered;

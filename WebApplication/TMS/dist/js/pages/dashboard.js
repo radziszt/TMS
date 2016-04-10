@@ -1,11 +1,15 @@
 (function (ng) {
     'use strict';
 
-    function DashboardFunctions($filter) {
+    function DashboardFunctions($filter, commonFunctions) {
         var df = this;
         //df.taskData = taskData;
         df.calcError = function calcError () {
-            return Object.keys($filter('myCompleted')(taskData, '105')).length;
+            return commonFunctions.objectLength($filter('myActiveBug')(taskData, '105'));
+        };
+
+        df.countCompletedTasks = function countCompletedTasks() {
+            return commonFunctions.objectLength($filter('completedTasks')(taskData));
         };
 
         var taskData;
@@ -41,6 +45,7 @@
         dc.taskData = taskData;
         dashboardFunctions.getTaskData(dc.taskData);
         dc.calcError = dashboardFunctions.calcError();
+        dc.countCompletedTasks = dashboardFunctions.countCompletedTasks();
 
         dc.setLabel = function (label) {
             switch (label) {

@@ -5,15 +5,19 @@
     'use strict';
 
     angular.module('commonFunctions', [])
-        .service('commonServiceFunctions', CommonServiceFunctions)
+        .service('commonFunctions', CommonFunctions)
         .service('commonListFunctions', CommonListFunctions);
 
-    function CommonServiceFunctions() {
-        var csf = this;
+    function CommonFunctions() {
+        var cf = this;
 
-        csf.getData = function getData(response) {
+        cf.getData = function getData(response) {
             return response.data;
         };
+
+        cf.objectLength = function objectLeangth(object) {
+            return Object.keys(object).length;
+        }
     }
 
     function CommonListFunctions() {

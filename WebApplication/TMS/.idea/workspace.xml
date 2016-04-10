@@ -27,17 +27,17 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-54.596153">
-              <caret line="389" column="61" selection-start-line="389" selection-start-column="56" selection-end-line="389" selection-end-column="61" />
+            <state vertical-scroll-proportion="-3.9230769">
+              <caret line="79" column="82" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
               <folding>
                 <element signature="n#section#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <marker date="1460327242270" expanded="true" signature="5842:6174" placeholder="[...]" />
-                <marker date="1460327242270" expanded="true" signature="5852:6173" placeholder="{...}" />
-                <marker date="1460327242270" expanded="true" signature="6306:6823" placeholder="[...]" />
-                <marker date="1460327242270" expanded="true" signature="6313:6822" placeholder="{...}" />
+                <marker date="1460332135772" expanded="true" signature="5862:6194" placeholder="[...]" />
+                <marker date="1460332135772" expanded="true" signature="5872:6193" placeholder="{...}" />
+                <marker date="1460332135772" expanded="true" signature="6326:6843" placeholder="[...]" />
+                <marker date="1460332135772" expanded="true" signature="6333:6842" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -72,7 +72,7 @@
       <file leaf-file-name="tasks.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/data/tasks.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.576923">
+            <state vertical-scroll-proportion="-3.9230769">
               <caret line="12" column="19" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="19" />
               <folding />
             </state>
@@ -82,13 +82,25 @@
       <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/js/pages/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19381107">
-              <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+            <state vertical-scroll-proportion="1.3013029">
+              <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
               <folding>
-                <element signature="e#2217#2964#0" expanded="false" />
-                <element signature="e#3571#4295#0" expanded="false" />
-                <marker date="1460330661324" expanded="true" signature="2731:2774" placeholder="..." />
-                <marker date="1460330661324" expanded="true" signature="4102:4145" placeholder="..." />
+                <element signature="e#2483#3230#0" expanded="false" />
+                <element signature="e#3837#4561#0" expanded="false" />
+                <marker date="1460332135797" expanded="true" signature="2997:3040" placeholder="..." />
+                <marker date="1460332135797" expanded="true" signature="4368:4411" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common-functions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/js/services/common-functions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -98,8 +110,20 @@
         <entry file="file://$PROJECT_DIR$/dist/js/filters/customFilter.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/js/services/service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,26 +168,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/data/task.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="task.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/js/pages/task.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="77" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -194,7 +198,6 @@
         <option value="$PROJECT_DIR$/dist/js/sidebar.js" />
         <option value="$PROJECT_DIR$/pages/sidebar.html" />
         <option value="$PROJECT_DIR$/dist/js/services/commonFunctions.js" />
-        <option value="$PROJECT_DIR$/dist/js/services/common-functions.js" />
         <option value="$PROJECT_DIR$/dist/data/tsconfig.json" />
         <option value="$PROJECT_DIR$/dist/data/task.json" />
         <option value="$PROJECT_DIR$/dist/data/mytasks.json" />
@@ -219,13 +222,14 @@
         <option value="$PROJECT_DIR$/pages/project.html" />
         <option value="$PROJECT_DIR$/pages/projects.html" />
         <option value="$PROJECT_DIR$/dist/data/105.json" />
-        <option value="$PROJECT_DIR$/dist/js/services/service.js" />
         <option value="$PROJECT_DIR$/dist/js/mainComponents.js" />
         <option value="$PROJECT_DIR$/pages/components/navBar.html" />
         <option value="$PROJECT_DIR$/dist/js/pages/task.js" />
         <option value="$PROJECT_DIR$/dist/data/tasks.json" />
-        <option value="$PROJECT_DIR$/pages/dashboard.html" />
+        <option value="$PROJECT_DIR$/dist/js/services/service.js" />
+        <option value="$PROJECT_DIR$/dist/js/services/common-functions.js" />
         <option value="$PROJECT_DIR$/dist/js/filters/customFilter.js" />
+        <option value="$PROJECT_DIR$/pages/dashboard.html" />
         <option value="$PROJECT_DIR$/dist/js/pages/dashboard.js" />
       </list>
     </option>
@@ -670,10 +674,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
           <folding>
-            <element signature="e#2217#2964#0" expanded="false" />
-            <element signature="e#3571#4295#0" expanded="false" />
-            <marker date="1460330661324" expanded="true" signature="2731:2774" placeholder="..." />
-            <marker date="1460330661324" expanded="true" signature="4102:4145" placeholder="..." />
+            <element signature="e#2483#3230#0" expanded="false" />
+            <element signature="e#3837#4561#0" expanded="false" />
+            <marker date="1460332135797" expanded="true" signature="2997:3040" placeholder="..." />
+            <marker date="1460332135797" expanded="true" signature="4368:4411" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -874,16 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/services/common-functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -943,16 +937,6 @@
             <marker date="1460318838437" expanded="true" signature="3231:3552" placeholder="{...}" />
             <marker date="1460318838437" expanded="true" signature="3672:3956" placeholder="[...]" />
             <marker date="1460318838437" expanded="true" signature="3682:3955" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/services/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1037,28 +1021,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/dashboard.html">
+    <entry file="file://$PROJECT_DIR$/dist/js/pages/mytasks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-54.596153">
-          <caret line="389" column="61" selection-start-line="389" selection-start-column="56" selection-end-line="389" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
           <folding>
-            <element signature="n#section#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <marker date="1460327242270" expanded="true" signature="5842:6174" placeholder="[...]" />
-            <marker date="1460327242270" expanded="true" signature="5852:6173" placeholder="{...}" />
-            <marker date="1460327242270" expanded="true" signature="6306:6823" placeholder="[...]" />
-            <marker date="1460327242270" expanded="true" signature="6313:6822" placeholder="{...}" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/data/tasks.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.576923">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,10 +1055,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/pages/mytasks.js">
+    <entry file="file://$PROJECT_DIR$/dist/data/tasks.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/services/service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
+          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/services/common-functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
@@ -1099,20 +1086,37 @@
     <entry file="file://$PROJECT_DIR$/dist/js/filters/customFilter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="79" column="82" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
+          <folding>
+            <element signature="n#section#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <marker date="1460332135772" expanded="true" signature="5862:6194" placeholder="[...]" />
+            <marker date="1460332135772" expanded="true" signature="5872:6193" placeholder="{...}" />
+            <marker date="1460332135772" expanded="true" signature="6326:6843" placeholder="[...]" />
+            <marker date="1460332135772" expanded="true" signature="6333:6842" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/pages/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19381107">
-          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+        <state vertical-scroll-proportion="1.3013029">
+          <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
           <folding>
-            <element signature="e#2217#2964#0" expanded="false" />
-            <element signature="e#3571#4295#0" expanded="false" />
-            <marker date="1460330661324" expanded="true" signature="2731:2774" placeholder="..." />
-            <marker date="1460330661324" expanded="true" signature="4102:4145" placeholder="..." />
+            <element signature="e#2483#3230#0" expanded="false" />
+            <element signature="e#3837#4561#0" expanded="false" />
+            <marker date="1460332135797" expanded="true" signature="2997:3040" placeholder="..." />
+            <marker date="1460332135797" expanded="true" signature="4368:4411" placeholder="..." />
           </folding>
         </state>
       </provider>
