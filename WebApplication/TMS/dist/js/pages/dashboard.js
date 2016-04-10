@@ -1,23 +1,46 @@
 (function (ng) {
     'use strict';
 
+    function DashboardFunctions($filter) {
+        var df = this;
+        //df.taskData = taskData;
+        df.calcError = function calcError () {
+            return Object.keys($filter('myCompleted')(taskData, '105')).length;
+        };
+
+        var taskData;
+        df.getTaskData = function getTaskData(data){
+            taskData = data;
+        };
+    }
+
     ng.module('dashboard', ['ngRoute'])
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/', {
                     templateUrl: 'pages/dashboard.html',
                     controller: DashboardController,
-                    controllerAs: 'dc'
-                })
-        });
+                    controllerAs: 'dc',
+                    resolve: {
+                        userData: function (userService) {
+                            return userService.getThisUser();
+                        },
+                        taskData: function (taskService) {
+                            return taskService.getTaskList();
+                        }
+                    }
 
-    function DashboardController() {
+                })
+        })
+        .service('dashboardFunctions', DashboardFunctions);
+
+    function DashboardController(userData, taskData, dashboardFunctions) {
         var dc = this;
 
-        var mytasks = $.getJSON('dist/data/mytasks.json');
-        mytasks.done(function (data) {
-            dc.mytasks = data;
-        });
+        dc.userData = userData.user;
+        dc.taskData = taskData;
+        dashboardFunctions.getTaskData(dc.taskData);
+        dc.calcError = dashboardFunctions.calcError();
 
         dc.setLabel = function (label) {
             switch (label) {

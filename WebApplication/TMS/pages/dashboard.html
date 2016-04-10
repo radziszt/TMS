@@ -1,6 +1,6 @@
 <div class="wrapper">
 
-    <nav-bar></nav-bar>
+    <nav-bar user-data="dc.userData"></nav-bar>
 
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
@@ -12,8 +12,8 @@
                     <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>{USER_NAME}</p>
-                    <a>{SOME_ADDITIONAL_INFO}</a>
+                    <p>{{dc.userData.firstName}} {{dc.userData.lastName}}</p>
+                    <a>{{dc.userData.position}}</a>
                 </div>
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -63,7 +63,7 @@
         <section class="content">
             <!--Info Boxes Begin-->
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-aqua"><i class="fa fa-sun-o"></i></span>
                         <div class="info-box-content">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-red"><i class="fa fa-check-square-o"></i></span>
                         <div class="info-box-content">
@@ -82,24 +82,13 @@
                     </div>
                 </div>
 
-                <div class="clearfix visible-sm-block"></div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="info-box">
-                        <span class="info-box-icon bg-lime"><i class="fa fa-birthday-cake"></i></span>
+                        <span class="info-box-icon bg-maroon"><i class="fa fa-birthday-cake"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Birthday</span>
                             <a href="#" class="info-box-number text-black">Tomasz Radziszewski</a>
                             <a href="#" class="info-box-number text-black">Aleksandra Gacparska</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Partners</span>
-                            <span class="info-box-number">7</span>
                         </div>
                     </div>
                 </div>
@@ -113,7 +102,7 @@
                     <!--Recent Tasks Begin-->
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Recent Tasks</h3>
+                            <h3 class="box-title">New Tasks</h3>
                             <div class="box-tools pull-right">
                                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
@@ -128,17 +117,29 @@
                                         <th>Name</th>
                                         <th>Project</th>
                                         <th>Status</th>
-                                        <th>Deadline</th>
+                                        <th>Type</th>
                                         <th>Assign To</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr ng-repeat="task in dc.mytasks">
-                                        <td><a href="#">{{task.taskId}}</a></td>
-                                        <td>{TASK_NAME}</td>
-                                        <td>{PROJECT_NAME}</td>
-                                        <td><span ng-class="dc.setLabel(task.taskStatus)">{{task.taskStatus}}</span></td>
-                                        <td>{END_DATE}</td>
+                                    <tr ng-repeat="task in dc.taskData | newOrUrgent">
+                                        <td><a href="#/tasks/{{task.taskId}}">{{task.taskId}}</a></td>
+                                        <td>{{task.taskName}}</td>
+                                        <td><a href="#/projects/{{task.projectId}}">{{task.projectName}}</td>
+                                        <td><span ng-class="['label', {
+                       'label-info'    : task.taskStatus === 'In Progress',
+                       'label-danger'  : task.taskStatus === 'Urgent',
+                       'label-warning' : task.taskStatus === 'New',
+                       'label-success' : task.taskStatus === 'Completed' || task.taskStatus === 'Fixed'}]">{{task.taskStatus}}</span>
+                                        </td>
+                                        <td><i ng-class="['fa', {
+                                                    'fa-bug'            : task.type === 'Bug',
+                                                    'fa-code'           : task.type === 'Development',
+                                                    'fa-paint-brush'    : task.type === 'Graphics',
+                                                    'fa-file-text-o'    : task.type === 'Documentation',
+                                                    'fa-cubes'          : task.type === 'Architecture',}]"></i>
+                                            {{task.type}}
+                                        </td>
                                         <td>
                                             <a class="btn btn-block btn-social bg-green btn-xs">
                                                 <i class="fa fa-check"></i> Assign to me
@@ -387,7 +388,7 @@
                         <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Errors Signed To You</span>
-                            <span class="info-box-number">5</span>
+                            <span class="info-box-number">{{dc.calcError}}</span>
                             <span class="progress-description text-info">
                                 <a href="#" class="text-white">{ERROR 1}</a>
                                 <span class="label label-default">NEW</span>

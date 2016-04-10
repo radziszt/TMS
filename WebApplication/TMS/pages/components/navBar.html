@@ -20,7 +20,7 @@
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="newTaskModal" tabindex="-1" role="dialog"
+                        <div class="modal fade" data-backdrop="static" id="newTaskModal" tabindex="-1" role="dialog"
                              aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -31,32 +31,95 @@
                                     </div>
                                     <div class="modal-body">
 
-                                            <div class="form-group">
-                                                <label for="taskName" class="col-sm-3 control-label">Task
-                                                    Name</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="taskName"
-                                                           placeholder="General Description">
-                                                </div>
+                                        <div class="form-group">
+                                            <label for="taskName" class="col-sm-3 control-label">Task
+                                                Name</label>
+                                            <div class="col-sm-9 margin-bottom">
+                                                <input type="text" class="form-control" id="taskName"
+                                                       placeholder="General Description">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="project1" class="col-sm-3 control-label">Task
-                                                    Name</label>
-                                                <div class="col-sm-9">
-                                                    <select class="form-control select2" data-size="5" placeholder="OMG"
-                                                            title="Select Project" id="project1">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                    </select>
-                                                </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="project" class="col-sm-3 control-label">Project</label>
+                                            <div class="col-sm-9 margin-bottom">
+                                                <select class="form-control select2"
+                                                        data-size="5"
+                                                        title="Select Project" id="project"
+                                                        style="width: 100%">
+                                                    <option ng-repeat="project in nbc.projectList">
+                                                        {{project.projectName}}
+                                                    </option>
+                                                </select>
                                             </div>
-
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="taskStatus" class="col-sm-3 control-label">Task Status</label>
+                                            <div class="col-sm-9 margin-bottom">
+                                                <select class="form-control select2" data-size="5"
+                                                        title="Select Status" id="taskStatus"
+                                                        style="width: 150px">
+                                                    <option></option>
+                                                    <option>Completed</option>
+                                                    <option>Fixed</option>
+                                                    <option>New</option>
+                                                    <option>In Progress</option>
+                                                    <option>Urgent</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="taskPriority" class="col-sm-3 control-label">Task
+                                                Priority</label>
+                                            <div class="col-sm-9 margin-bottom">
+                                                <select class="form-control select2" data-size="5"
+                                                        title="Select Priority" id="taskPriority"
+                                                        style="width: 150px">
+                                                    <option></option>
+                                                    <option>Low</option>
+                                                    <option>Normal</option>
+                                                    <option>High</option>
+                                                    <option>Urgent</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="taskType" class="col-sm-3 control-label">Task
+                                                Type</label>
+                                            <div class="col-sm-9 margin-bottom">
+                                                <select class="form-control select2" data-size="5"
+                                                        title="Select Type" id="taskType"
+                                                        style="width: 150px">
+                                                    <option></option>
+                                                    <option>Bug</option>
+                                                    <option>Development</option>
+                                                    <option>Graphics</option>
+                                                    <option>Documentation</option>
+                                                    <option>Architecture</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dueDate" class="col-sm-3 control-label">Due Date</label>
+                                            <div class="col-sm-9 margin-bottom">
+                                                <input type="text" class="form-control"
+                                                       data-inputmask="'alias': 'dd/mm/yyyy'" data-mask id="dueDate"
+                                                       style="width: 150px">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="taskDescription" class="col-sm-3 control-label">Task
+                                                Description</label>
+                                            <div class="col-sm-9 margin-bottom">
+                                                <textarea id="taskDescription" class="form-control" rows="5"
+                                                          placeholder="Precise Description"></textarea>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer no-border">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">
-                                            Close
+                                            Cancel
                                         </button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-primary">Create Task</button>
                                     </div>
                                 </div>
                             </div>
@@ -75,15 +138,15 @@
                 <li class="dropdown user user-menu">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="./dist/img/user1.png" class="user-image" alt="User Image">
-                        <span class="hidden-xs">{USER_NAME}</span>
+                        <span class="hidden-xs">{{nbc.userData.userName}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-yellow-active">
                             <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
                             <p>
-                                {USER_NAME}
-                                <small>{POSITION}</small>
+                                {{nbc.userData.firstName}} {{nbc.userData.lastName}}
+                                <small>{{nbc.userData.position}}</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->

@@ -6,7 +6,27 @@
 
     angular.module('service', [])
         .service('taskService', TaskService)
-        .service('projectService', ProjectService);
+        .service('projectService', ProjectService)
+        .service('userService', UserService);
+
+    /*USER SERVICE*/
+    function UserService($http, commonServiceFunctions){
+        var us = this;
+
+        us.thisUser = 105;
+
+        var GET_USER_DATA = 'dist/data/{userId}.json';
+        us.getUser = function getUser(userId) {
+            var url = GET_USER_DATA.replace("{userId}", userId);
+            return $http.get(url).then(commonServiceFunctions.getData);
+        };
+
+        us.getThisUser = function getThisUser() {
+            var url = GET_USER_DATA.replace("{userId}", us.thisUser);
+            return $http.get(url).then(commonServiceFunctions.getData);
+        };
+
+    }
 
     /*MY TASKS LIST SERVICE*/
     function TaskService($http, commonServiceFunctions) {
@@ -44,6 +64,7 @@
         };
 
         ps.getProjectList = function getProjectList() {
+            console.log(projectData);
             return projectData;
         }
     }

@@ -68,7 +68,7 @@
         };
 
         tf.updateDate = function updateDate(){
-            taskData.task.updateDate = $filter('date')(new Date(), 'dd/MM/yyyy  HH:mm');
+            taskData.task.updateDate = $filter('date')(new Date() - 300000000, 'dd/MM/yyyy  HH:mm');
         }
 
     }
