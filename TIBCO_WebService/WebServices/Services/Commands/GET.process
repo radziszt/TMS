@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <pd:name>Services/Commands/GET.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>147</pd:startX>
+    <pd:startY>227</pd:startY>
+    <pd:returnBindings>
+        <Response>
+            <xsl:value-of select="$GET_ProjectList/JSON"/>
+        </Response>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType>
+        <xsd:element name="Response" type="xsd:string"/>
+    </pd:endType>
+    <pd:endX>897</pd:endX>
+    <pd:endY>234</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1461191084604</pd:targetNamespace>
+    <pd:activity name="GET_ProjectList">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>506</pd:x>
+        <pd:y>231</pd:y>
+        <config>
+            <processName>/Services/Commands/GET_ProjectList.process</processName>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>GET_ProjectList</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GET_ProjectList</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

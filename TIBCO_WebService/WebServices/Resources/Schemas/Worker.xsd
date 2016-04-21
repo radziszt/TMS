@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/user.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/user.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="user">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="userId" type="xs:string"/>
+				<xs:element name="lastName" type="xs:string"/>
+				<xs:element name="firstName" type="xs:string"/>
+				<xs:element name="eMial" type="xs:string"/>
+				<xs:element name="phonenumber" type="xs:string"/>
+				<xs:element name="position" type="xs:string"/>
+				<xs:element name="userName" type="xs:string"/>
+				<xs:element name="password" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

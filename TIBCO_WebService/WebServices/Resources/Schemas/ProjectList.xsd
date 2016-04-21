@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/projects.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/projects.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="projects">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="projects" type="project"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="project">
+		<xs:sequence>
+			<xs:element name="projectId" type="xs:string"/>
+			<xs:element name="projectName" type="xs:string"/>
+			<xs:element name="projectPhase" type="xs:string"/>
+			<xs:element name="projectManager" type="xs:string"/>
+			<xs:element name="projectManagerId" type="xs:string"/>
+			<xs:element name="estimatedGoLive" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>	

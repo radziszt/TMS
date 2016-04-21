@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pd:ProcessDefinition xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns="http://www.w3schools.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx="http://www.tibco.com/schemas/employee.xsd">
     <xsd:import namespace="http://www.tibco.com/schemas/employee.xsd" schemaLocation="/Resources/Schemas/Employee.xsd"/>
-    <pd:name>Services/Commands/POST_NewUser.process</pd:name>
+    <pd:name>Services/Commands/POST_User.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType>
         <xsd:element name="NewEmployee">
