@@ -13,24 +13,20 @@
                     controllerAs: 'pc',
                     resolve: {
                         projectList: function(projectService){
-                            return projectService.getProjectList()
+                            return projectService.getProjectList();
+                        },
+                        userData: function (userService) {
+                            return userService.getThisUser();
                         }
                     }
                 });
         });
 
-    function ProjectsController(projectList, commonListFunctions, $sce){
+    function ProjectsController(projectList, userData, $sce){
         var pc = this;
 
-        pc.projectList = projectList;
-
-        pc.setProgress = function(progress){
-            return commonListFunctions.setProgress(progress);
-        };
-
-        pc.setLabel = function(label){
-            return commonListFunctions.setLabel(label);
-        };
+        pc.userData = userData.user;
+        pc.projectList = projectList.projects;
 
         pc.setGoLiveHtml = function setGoLiveHtml(goLive){
             switch(goLive){
@@ -40,7 +36,7 @@
                 default:
                     return $sce.trustAsHtml(goLive);
             }
-        }
+        };
 
         setTimeout(function(){
             $('#projectList').DataTable({

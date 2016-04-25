@@ -34,7 +34,8 @@
                         }
                     }
 
-                })
+                });
+
         })
         .service('dashboardFunctions', DashboardFunctions);
 

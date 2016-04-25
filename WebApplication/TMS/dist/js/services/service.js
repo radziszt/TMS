@@ -10,7 +10,7 @@
         .service('userService', UserService);
 
     /*USER SERVICE*/
-    function UserService($http, commonFunctions){
+    function UserService($http, commonFunctions) {
         var us = this;
 
         us.thisUser = 105;
@@ -44,7 +44,7 @@
             return $http.get(url).then(commonFunctions.getData);
         };
 
-        mts.setTask = function setTask(taskId, taskData){
+        mts.setTask = function setTask(taskId, taskData) {
             var url = GET_TASK_DATA.replace("{taskId}", taskId);
             $http.post(url, taskData).then(commonFunctions.getData);
         };
@@ -54,19 +54,46 @@
     function ProjectService($http, commonFunctions) {
         var ps = this;
 
-        var GET_PojectList = 'dist/data/projects.json';
-        var projectData = $http.get(GET_PojectList).then(commonFunctions.getData);
-
-        var GET_PROJECT_DATA = 'dist/data/{projectId}.json';
-        ps.getProject = function getProject(projectId) {
-            var url = GET_PROJECT_DATA.replace("{projectId}", projectId);
-            return $http.get(url).then(commonFunctions.getData);
-        };
+        var PROJECT_LIST_URL = 'http://localhost:7575/projects';
+        var PROJECT_DATA_URL = 'http://localhost:7575/projects/{projectId}.json';
 
         ps.getProjectList = function getProjectList() {
-            console.log(projectData);
-            return projectData;
-        }
+            return $http.get(PROJECT_LIST_URL).then(function successCallback(response) {
+                return commonFunctions.getData(response);
+
+            }, function errorCallback(response) {
+                console.error('Service unavailable, returned response:', response);
+            });
+        };
+
+        ps.getProject = function getProject(projectId) {
+            var url = GET_PROJECT_DATA.replace("{projectId}", projectId);
+            return $http.get(url).then(function successCallback(response) {
+                return commonFunctions.getData(response);
+
+            }, function errorCallback(response) {
+                console.error('Service unavailable, returned response:', response);
+            });
+        };
+
+        ps.postProject = function postProject(projectId) {
+            var url = GET_PROJECT_DATA.replace("{projectId}", projectId);
+            return $http.post(url, postData).then(function successCallback(response) {
+
+            }, function errorCallback(response) {
+                console.error('Service unavailable, returned response:', response);
+            });
+        };
+
+        ps.putProject = function postProject(projectId) {
+            var url = GET_PROJECT_DATA.replace("{projectId}", projectId);
+            return $http.put(url, putData).then(function successCallback(response) {
+
+            }, function errorCallback(response) {
+                console.error('Service unavailable, returned response:', response);
+            });
+        };
+
     }
 
 })(window.angular);

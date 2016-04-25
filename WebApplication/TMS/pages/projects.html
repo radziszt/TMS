@@ -1,4 +1,4 @@
-<nav-bar></nav-bar>
+<nav-bar user-data="pc.userData"></nav-bar>
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -9,8 +9,8 @@
                 <img src="./dist/img/user1.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>{USER_NAME}</p>
-                <a>{SOME_ADDITIONAL_INFO}</a>
+                <p>{{pc.userData.firstName}} {{pc.userData.lastName}}</p>
+                <a>{{pc.userData.position}}</a>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -61,25 +61,25 @@
                 <div class="box box-warning">
 
                     <div class="box-body">
-                        <table id="projectList" class="table table-bordered table-hover">
-                            <thead>
-                            <tr>
-                                <th>Project ID</th>
-                                <th>Project Name</th>
-                                <th>Project Phase</th>
-                                <th>Project Manager</th>
-                                <th>Estimate Go-Live</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="project in pc.projectList">
-                                <td><a href="#/projects/{{project.projectId}}">{{project.projectId}}</a></td>
-                                <td>{{project.projectName}}</td>
-                                <td>{{project.projectPhase}}</td>
-                                <td><a href="#/user/{{project.taskManagerId}}">{{project.projectManager}}</a></td>
-                                <td ng-bind-html="pc.setGoLiveHtml(project.estimatedGoLive)"></td>
-                            </tr>
-                        </table>
+        <table id="projectList" class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Project ID</th>
+                <th>Project Name</th>
+                <th>Project Phase</th>
+                <th>Project Manager</th>
+                <th>Estimate Go-Live</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="project in pc.projectList">
+                <td><a href="#/projects/{{project.projectId}}">{{project.projectId}}</a></td>
+                <td>{{project.projectName}}</td>
+                <td>{{project.projectPhase}}</td>
+                <td><a href="#/user/{{project.taskManagerId}}">{{project.projectManager}}</a></td>
+                <td ng-bind-html="pc.setGoLiveHtml(project.estimatedGoLive)"></td>
+            </tr>
+        </table>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 
     ng.module('tms',
         [
+            'login',
             'dashboard',
             'myTasks',
             'task',
@@ -12,7 +13,8 @@
 
             'service',
             'commonFunctions',
-            'customFilter'
+            'customFilter',
+            'ngRoute'
         ])
         .config(
             function ($routeProvider) {
@@ -22,6 +24,4 @@
                     });
             }
         )
-
-
 })(window.angular);

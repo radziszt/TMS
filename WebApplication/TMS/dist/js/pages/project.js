@@ -26,6 +26,7 @@
     function ProjectController(projectData, taskList, projectFunctions, $scope) {
         var pc = this;
 
+
         pc.taskList = taskList;
 
         setTimeout(function(){
